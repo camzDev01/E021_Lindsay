@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Marimba Chapina: El Alma de Guatemala en el Mundo</title>
+    <link rel="icon" href="https://img.icons8.com/color/48/000000/marimba.png" type="image/png"> <style>
+        /* Estilos CSS Integrados */
+        :root {
+            --color-primary: #8B4513; /* Marrón tierra */
+            --color-secondary: #FFD700; /* Dorado */
+            --color-accent: #4CAF50; /* Verde vibrante */
+            --color-text: #333;
+            --color-light: #f4f4f4;
+            --color-white: #fff;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: var(--color-light);
+            color: var(--color-text);
+            line-height: 1.6;
+        }
+
+        header {
+            background-color: var(--color-primary);
+            color: var(--color-white);
+            padding: 1rem 0;
+            text-align: center;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+        }
+
+        nav ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            background-color: var(--color-secondary);
+        }
+
+        nav ul li a {
+            display: block;
+            padding: 1rem 1.5rem;
+            color: var(--color-primary);
+            text-decoration: none;
+            font-weight: bold;
+            transition: background-color 0.3s ease;
+        }
+
+        nav ul li a:hover {
+            background-color: var(--color-primary);
+            color: var(--color-white);
+        }
+
+        .hero {
+            background: url('banner.jpg') no-repeat center center/cover; /* Placeholder para tu banner */
+            color: var(--color-white);
+            text-align: center;
+            padding: 8rem 2rem;
+            position: relative;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5); /* Oscurecimiento para que el texto resalte */
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.7);
+        }
+
+        .hero p {
+            font-size: 1.5rem;
+            margin-bottom: 2rem;
+            text-shadow: 1px 1px 3px rgba(0,0,0,0.5);
+        }
+
+        .btn {
+            display: inline-block;
+            background-color: var(--color-accent);
+            color: var(--color-white);
+            padding: 0.8rem 2rem;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+            font-weight: bold;
+        }
+
+        .btn:hover {
+            background-color: #388E3C; /* Verde más oscuro */
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 2rem auto;
+            padding: 0 2rem;
+            background-color: var(--color-white);
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            border-radius: 8px;
+        }
+
+        section {
+            padding: 2rem 0;
+            border-bottom: 1px solid #eee;
+        }
+
+        section:last-of-type {
+            border-bottom: none;
+        }
+
+        h2 {
+            text-align: center;
+            color: var(--color-primary);
+            margin-bottom: 1.5rem;
+            font-size: 2.5rem;
+        }
+
+        .image-gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+
+        .image-gallery img {
+            width: 100%;
+            height: 200px; /* Altura fija para uniformidad */
+            object-fit: cover; /* Asegura que la imagen cubra el espacio sin distorsionarse */
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+
+        .video-container {
+            position: relative;
+            padding-bottom: 56.25%; /* 16:9 Aspect Ratio */
+            height: 0;
+            overflow: hidden;
+            max-width: 100%;
+            background: #000;
+            margin: 2rem auto;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+
+        .video-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+
+        .form-section form {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 2rem;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            background-color: var(--color-light);
+        }
+
+        .form-section label {
+            font-weight: bold;
+            margin-bottom: 0.5rem;
+            color: var(--color-primary);
+        }
+
+        .form-section input[type="text"],
+        .form-section input[type="email"],
+        .form-section select,
+        .form-section textarea {
+            padding: 0.8rem;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 1rem;
+        }
+
+        .form-section textarea {
+            resize: vertical;
+            min-height: 100px;
+        }
+
+        .form-section button {
+            background-color: var(--color-accent);
+            color: var(--color-white);
+            padding: 1rem 1.5rem;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1.1rem;
+            font-weight: bold;
+            transition: background-color 0.3s ease;
+        }
+
+        .form-section button:hover {
+            background-color: #388E3C;
+        }
+
+        footer {
+            background-color: var(--color-primary);
+            color: var(--color-white);
+            text-align: center;
+            padding: 1.5rem 0;
+            margin-top: 2rem;
+            box-shadow: 0 -2px 5px rgba(0,0,0,0.2);
+        }
+
+        footer p {
+            margin: 0.5rem 0;
+        }
+
+        footer a {
+            color: var(--color-secondary);
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .hero p {
+                font-size: 1.2rem;
+            }
+
+            nav ul {
+                flex-direction: column;
+            }
+
+            nav ul li a {
+                padding: 0.8rem 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Marimba Chapina</h1>
+        <nav>
+            <ul>
+                <li><a href="#home">Inicio</a></li>
+                <li><a href="#about">Acerca de Nosotros</a></li>
+                <li><a href="#music">Música y Artistas</a></li>
+                <li><a href="#events">Eventos</a></li>
+                <li><a href="#contact">Contacto</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <h1>Marimba Chapina: El Alma de Guatemala Resuena en el Mundo</h1>
+            <p>Descubre la magia de la música de marimba guatemalteca, ¡llevando su ritmo y tradición a cada rincón del planeta!</p>
+            <a href="#music" class="btn">Explorar Música</a>
+        </div>
+    </section>
+
+    <div class="container">
+        <section id="about">
+            <h2>Acerca de Nosotros</h2>
+            <p>En **Marimba Chapina**, nos dedicamos con pasión a la preservación y difusión de la rica tradición musical de la marimba guatemalteca. Desde nuestras raíces en el corazón de Guatemala, nos esforzamos por llevar los sonidos vibrantes y emotivos de este instrumento nacional a una audiencia global. Creemos firmemente que la música de marimba es un puente cultural que une corazones y celebra la diversidad.</p>
+            <p>Nuestra misión es apoyar a talentosos marimbistas, fomentar la creación de nuevas obras y educar al mundo sobre la historia y el significado cultural de la marimba. ¡Únete a nosotros en este viaje melódico!</p>
+        </section>
+
+        <section id="image-references">
+            <h2>Nuestra Inspiración en Imágenes</h2>
+            <div class="image-gallery">
+                <img src="img1.webp"Grupo de marimbistas en plena actuación">
+                <img src="img2.jpg"Marimba tradicional antigua y bellamente elaborada">
+                <img src="img3.jpeg"Primer plano de baquetas golpeando las teclas de la marimba">
+                <img src="img4.jpg"Paisaje de Antigua Guatemala o Lago de Atitlán con marimba en primer plano">
+            </div>
+        </section>
+
+        <section id="music">
+            <h2>Nuestra Música y Videos</h2>
+            <p style="text-align: center;">Sumérgete en la armonía de la marimba guatemalteca. Aquí te presentamos una selección de nuestra música y un video especial.</p>
+
+            <div class="video-container">
+                <iframe src="https://www.youtube.com/embed/B66H87hdn8tUixsf" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </div>
+
+            <p style="text-align: center; margin-top: 2rem;">Pronto tendremos nuestra galería de álbumes completa aquí. ¡Estén atentos a nuevos lanzamientos!</p>
+        </section>
+
+        <section id="events">
+            <h2>Próximos Eventos y Giras</h2>
+            <p style="text-align: center;">¡No te pierdas la oportunidad de vivir la marimba en vivo! Consulta nuestras próximas presentaciones.</p>
+            <ul>
+                <li><strong>20 de Julio, 2025:</strong> Concierto de Marimba Clásica - Teatro Nacional, Ciudad de Guatemala.</li>
+                <li><strong>5 de Septiembre, 2025:</strong> Festival Internacional de Marimba - Quetzaltenango, Guatemala.</li>
+                <li><strong>15 de Noviembre, 2025:</strong> Gira por Europa - Varias ciudades.</li>
+            </ul>
+        </section>
+
+        <section id="contact" class="form-section">
+            <h2>Contáctanos</h2>
+            <form id="customerForm">
+                <h2>¡Queremos Conectarnos Contigo!</h2>
+                <p>Déjanos tus datos y te mantendremos al tanto de nuestra música, eventos y novedades.</p>
+
+                <label for="nombre">Nombre Completo:</label>
+                <input type="text" id="nombre" name="nombre" required>
+
+                <label for="email">Correo Electrónico:</label>
+                <input type="email" id="email" name="email" required>
+
+                <label for="pais">País:</label>
+                <input type="text" id="pais" name="pais">
+
+                <label for="pasatiempos">¿Cuáles son tus pasatiempos o intereses musicales?</label>
+                <textarea id="pasatiempos" name="pasatiempos" rows="4"></textarea>
+
+                <label for="intereses">¿Cómo te gustaría que Marimba Chapina se conecte contigo?</label>
+                <select id="intereses" name="intereses">
+                    <option value="">Selecciona una opción</option>
+                    <option value="conciertos">Información sobre conciertos y giras</option>
+                    <option value="musica">Nuevos lanzamientos musicales</option>
+                    <option value="contratacion">Contratación para eventos</option>
+                    <option value="general">Información general</option>
+                </select>
+
+                <label for="mensaje">Tu Mensaje (Opcional):</label>
+                <textarea id="mensaje" name="mensaje" rows="6"></textarea>
+
+                <button type="submit">Enviar Información</button>
+            </form>
+        </section>
+    </div>
+
+    <footer>
+        <p>&copy; 2025 Marimba Chapina. Todos los derechos reservados.</p>
+        <p>Síguenos en nuestras redes sociales: [Iconos de Redes Sociales Aquí]</p>
+        <p>Explora más sobre la cultura guatemalteca: <a href="https://visitguatemala.com/" target="_blank" rel="noopener noreferrer">Visit Guatemala</a></p>
+        <p>Aprende sobre la marimba: <a href="https://es.wikipedia.org/wiki/Marimba" target="_blank" rel="noopener noreferrer">La Marimba en Wikipedia</a></p>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Smooth scrolling para los enlaces de navegación
+            document.querySelectorAll('nav ul li a').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+
+                    document.querySelector(this.getAttribute('href')).scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                });
+            });
+
+            // Mensaje de éxito al enviar el formulario (simulado)
+            const customerForm = document.getElementById('customerForm');
+            customerForm.addEventListener('submit', function(event) {
+                event.preventDefault(); // Evita que el formulario se envíe realmente
+
+                const nombre = document.getElementById('nombre').value;
+                const email = document.getElementById('email').value;
+                const pais = document.getElementById('pais').value;
+                const pasatiempos = document.getElementById('pasatiempos').value;
+                const intereses = document.getElementById('intereses').value;
+                const mensaje = document.getElementById('mensaje').value;
+
+                // En una aplicación real, aquí enviarías estos datos a un servidor.
+                console.log('Datos del cliente:', { nombre, email, pais, pasatiempos, intereses, mensaje });
+
+                alert(`¡Gracias, ${nombre}! Hemos recibido tu información y nos pondremos en contacto pronto.`);
+
+                // Opcional: Resetear el formulario después de enviar
+                customerForm.reset();
+            });
+        });
+    </script>
+</body>
+</html>
